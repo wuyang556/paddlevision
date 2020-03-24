@@ -14,7 +14,9 @@
    
    - resnet152: [百度网盘提取码：0r0p](https://pan.baidu.com/s/1j_zCsYnLCpdCAKdoOcjcPw)
    
-   - vgg: [百度网盘提取码：]()
+   - vgg13: [百度网盘提取码：]()
+   - vgg16: [百度网盘提取码：]()
+   - vgg19: [百度网盘提取码：]()
    
    - alexnet: [百度网盘提取码：v82t](https://pan.baidu.com/s/13sztzmcNBu5Yr_KsftVR7Q)
 

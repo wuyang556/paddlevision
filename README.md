@@ -6,6 +6,8 @@
 
 3. 将torchvison的resnet，vgg， alexnet模型的预训练模型参数保存为paddlepaddle动态图可读格式；
 
+   paddlepaddle动态图版预训练模型：
+   
    - resnet34: [百度网盘提取码：ku58](https://pan.baidu.com/s/11SS2V0LSKppJ8pTryKVa-A)
    
    - resnet50: [百度网盘提取码：3t4s](https://pan.baidu.com/s/1aRGVMIPNEL6qhUzzwN2MlA)

@@ -6,14 +6,11 @@
 
 3. 将torchvison的resnet，vgg， alexnet模型的预训练模型参数保存为paddlepaddle动态图可读格式；
 
-   - resnet34: [百度网盘]()
-
-   - resnet50: [百度网盘]()
-
-   - resnet101: [百度网盘]()
-
-   - resnet152: [百度网盘]()
-
-   - vgg: [百度网盘]()
-   - alexnet: [百度网盘]()
+   - resnet34: [百度网盘提取码：ku58](https://pan.baidu.com/s/11SS2V0LSKppJ8pTryKVa-A)
+- resnet50: [百度网盘提取码：3t4s](https://pan.baidu.com/s/1aRGVMIPNEL6qhUzzwN2MlA)
+   - resnet101: [百度网盘提取码：sg8z](https://pan.baidu.com/s/1z-B9TGB1jjDstfJBwFqG5A)
+- resnet152: [百度网盘提取码：0r0p](https://pan.baidu.com/s/1j_zCsYnLCpdCAKdoOcjcPw)
+   
+- vgg: [百度网盘提取码：]()
+   - alexnet: [百度网盘提取码：v82t](https://pan.baidu.com/s/13sztzmcNBu5Yr_KsftVR7Q)
 

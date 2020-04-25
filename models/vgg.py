@@ -7,7 +7,7 @@ import paddle
 import paddle.fluid as fluid
 
 import torch
-from .utils import ReLU, Dropput2d
+from .utils import ReLU, Dropout2d
 # import torch.nn as nn
 # import torchvision
 # torchvision.models.vgg16()
@@ -21,10 +21,10 @@ class VGG(fluid.dygraph.Layer):
         self.classifier = fluid.dygraph.container.Sequential(
             fluid.dygraph.Linear(512*7*7, 4096, act="relu"),
             ReLU(),
-            Dropput2d(),
+            Dropout2d(),
             fluid.dygraph.Linear(input_dim=4096, output_dim=4096, act="relu"),
             ReLU(),
-            Dropput2d(),
+            Dropout2d(),
             fluid.dygraph.Linear(input_dim=4096, output_dim=num_classes)
         )
 

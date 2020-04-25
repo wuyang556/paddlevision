@@ -5,9 +5,9 @@ import paddle
 import paddle.fluid as fluid
 
 
-class Dropput2d(fluid.dygraph.Layer):
+class Dropout2d(fluid.dygraph.Layer):
     def __init__(self, p=0.5):
-        super(Dropput2d, self).__init__()
+        super(Dropout2d, self).__init__()
         self.p = p
 
     def forward(self, x):
@@ -20,3 +20,11 @@ class ReLU(fluid.dygraph.Layer):
 
     def forward(self, x):
         return fluid.layers.relu(x)
+
+
+class ReLU6(fluid.dygraph.Layer):
+    def __init__(self):
+        super(ReLU6, self).__init__()
+
+    def forward(self, x):
+        return fluid.layers.relu6(x)

@@ -3,7 +3,9 @@
 # created by wuyang on 2020/3/23
 import paddle
 import paddle.fluid as fluid
-from utils import ReLU, Dropput2d
+from .utils import ReLU, Dropout2d
+
+
 def conv3x3(in_planes, out_planes, stride=1, groups=1, dilation=1):
     """3x3 convolution with padding"""
     return fluid.dygraph.Conv2D(in_planes, out_planes, filter_size=3, stride=stride,
@@ -328,36 +330,38 @@ def wide_resnet101_2(pretrained=False, progress=True, **kwargs):
 if __name__ == '__main__':
     import torch
     with fluid.dygraph.guard():
-        model = resnet34()
+        model = resnet50()
         state_dict = model.state_dict()
         print(state_dict.keys())
         print(len(state_dict.keys()))
 
-        resnet34_torch_path = r"C:\Users\wuyang\.cache\torch\checkpoints\resnet34-333f7ec4.pth"
-        resnet34_torch = torch.load(resnet34_torch_path, map_location=torch.device("cpu"))
-        print(resnet34_torch.keys())
-        print(len(resnet34_torch.keys()))
+        model_torch_path = r"C:\Users\wuyang\.cache\torch\checkpoints\resnet50-19c8e357.pth"
+        model_torch = torch.load(model_torch_path, map_location=torch.device("cpu"))
+        print(model_torch.keys())
+        print(len(model_torch.keys()))
 
         new_state_dict = {}
         for key in state_dict.keys():
-            if key in resnet34_torch.keys():
+            if key in model_torch.keys():
                 if "fc" in key:
-                    print(state_dict[key].shape, resnet34_torch[key].detach().numpy().transpose().shape)
-                    new_state_dict[key] = fluid.dygraph.to_variable(resnet34_torch[key].detach().numpy().transpose().astype("float32"))
+                    print(state_dict[key].shape, model_torch[key].detach().numpy().transpose().shape)
+                    new_state_dict[key] = fluid.dygraph.to_variable(model_torch[key].detach().numpy().transpose().astype("float32"))
                 else:
-                    print(state_dict[key].shape, resnet34_torch[key].detach().numpy().shape)
-                    new_state_dict[key] = fluid.dygraph.to_variable(resnet34_torch[key].detach().numpy().astype("float32"))
+                    print(state_dict[key].shape, model_torch[key].detach().numpy().shape)
+                    new_state_dict[key] = fluid.dygraph.to_variable(model_torch[key].detach().numpy().astype("float32"))
             else:
                 if "_mean" in key:
                     torch_key = key.replace("_mean", "running_mean")
-                    print(state_dict[key].shape, resnet34_torch[torch_key].detach().numpy().shape)
-                    new_state_dict[key] = fluid.dygraph.to_variable(resnet34_torch[torch_key].detach().numpy().astype("float32"))
+                    print(state_dict[key].shape, model_torch[torch_key].detach().numpy().shape)
+                    new_state_dict[key] = fluid.dygraph.to_variable(model_torch[torch_key].detach().numpy().astype("float32"))
                 if "_variance" in key:
                     torch_key = key.replace("_variance", "running_var")
-                    print(state_dict[key].shape, resnet34_torch[torch_key].detach().numpy().shape)
-                    new_state_dict[key] = fluid.dygraph.to_variable(resnet34_torch[torch_key].detach().numpy().astype("float32"))
+                    print(state_dict[key].shape, model_torch[torch_key].detach().numpy().shape)
+                    new_state_dict[key] = fluid.dygraph.to_variable(model_torch[torch_key].detach().numpy().astype("float32"))
 
         print(len(new_state_dict.keys()))
 
         model.set_dict(new_state_dict)
-        fluid.dygraph.save_dygraph(model.state_dict(), "./resnet34")
+        fluid.dygraph.save_dygraph(model.state_dict(), "./resnet50")
+
+        import torchvision.models.alexnet

@@ -7,7 +7,7 @@
 3. 将torchvison的resnet，vgg， alexnet模型的预训练模型参数保存为paddlepaddle动态图可读格式；
 
 ##### 使用说明
-
+1. 可以使用convert_params.py直接将pytorch模型数据转换为对应的paddlepaddle动态图数据保存
 
 
 ##### paddlepaddle动态图版预训练模型

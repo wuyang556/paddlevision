@@ -13,14 +13,15 @@
    from models import resnet34
    model = resnet34(pretrained=True, root="")  # root 对应模型数据的保存路径
 
-##### paddlepaddle动态图版预训练模型
+##### 已转换的paddlepaddle动态图版预训练模型
 
 - alexnet: [百度网盘提取码：v82t](https://pan.baidu.com/s/13sztzmcNBu5Yr_KsftVR7Q)
 
 - vgg系列：
-    - vgg13: [百度网盘提取码：]()
-    - vgg16: [百度网盘提取码：]()
-    - vgg19: [百度网盘提取码：]()
+    - vgg11: [百度网盘提取码：0db9](https://pan.baidu.com/s/1Jm8Utkwivdg0geC7KzHT_w)
+    - vgg13: [百度网盘提取码：8xhj](https://pan.baidu.com/s/12u_f_0pyxyBfgs1q1k6Zcw)
+    - vgg16: [百度网盘提取码：5avl](https://pan.baidu.com/s/1MTqPqVguNbmotTxmyUFiHw)
+    - vgg19: [百度网盘提取码：rgez](https://pan.baidu.com/s/1zg7WlZyiotjHRFEpZrhRlA)
 - resnet系列：
     - resnet34: [百度网盘提取码：ku58](https://pan.baidu.com/s/11SS2V0LSKppJ8pTryKVa-A)
     - resnet50: [百度网盘提取码：3t4s](https://pan.baidu.com/s/1aRGVMIPNEL6qhUzzwN2MlA)
